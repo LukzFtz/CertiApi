@@ -305,7 +305,7 @@ def milhar(numbers):
             elif valorCentenasLength == 2 and valorCentenas[0] != '1':
                 valorExtenso +=" e " + dezenaGeral(valorCentenas)
             else:
-                valorExtenso += " " + centena(valorCentenas)
+                valorExtenso += " e " + centena(valorCentenas)
         else:
             valorExtenso += unidade(aux) + ' ' + unidadeAtual
             if valorCentenasLength == 1:
@@ -315,7 +315,7 @@ def milhar(numbers):
             elif valorCentenasLength == 2 and valorCentenas[0] != '1':
                 valorExtenso += " e " + dezenaGeral(valorCentenas)
             else:
-                valorExtenso +=" " + centena(valorCentenas)
+                valorExtenso +=" e " + centena(valorCentenas)
     else:
         valorCentenas = str(int(numbers[2:]))
         valorCentenasLength = len(valorCentenas)
@@ -332,7 +332,7 @@ def milhar(numbers):
         elif valorCentenasLength == 2 and valorCentenas[0] != '1':
             valorExtenso += " e " + dezenaGeral(valorCentenas)
         else:
-            valorExtenso +=" " + centena(valorCentenas)
+            valorExtenso +=" e " + centena(valorCentenas)
 
     return valorExtenso
 
@@ -347,6 +347,15 @@ def transformNumToStr(numbers):
         numeroExtenso = "menos "
         moduloNumero=numbers[1:]
 
-    numeroExtenso += milhar(moduloNumero)
+    if tamanhoNumero == 1:
+        numeroExtenso += unidade(moduloNumero)
+    elif tamanhoNumero == 2 and moduloNumero[0]=='1':
+        numeroExtenso += dezena(moduloNumero)
+    elif tamanhoNumero == 2:
+        numeroExtenso += dezenaGeral(moduloNumero)
+    elif tamanhoNumero == 3:
+        numeroExtenso += centena(moduloNumero)
+    else:
+        numeroExtenso += milhar(moduloNumero)
 
     return numeroExtenso

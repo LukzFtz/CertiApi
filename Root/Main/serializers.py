@@ -3,5 +3,5 @@ from .models import Number
 from rest_framework.renderers import JSONRenderer
 
 class ExtensoSerializer(serializers.Serializer):
-    extenso = serializers.CharField(max_length=50)
+    extenso = serializers.CharField()
 

@@ -25,5 +25,3 @@ def extenso(request, pathRequest):
             json
 
             return HttpResponse( json )
-
-# Create your views here.
