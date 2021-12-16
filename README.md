@@ -1,6 +1,6 @@
 # CertiApi
 
-Passo 1: Com o terminal aberto em uma pasta digite o seguinte comando:
+Passo 1: Com o terminal aberto digite o seguinte comando:
 
 ```Unix Assembly
 git clone https://github.com/LukzFtz/CertiApi.git
