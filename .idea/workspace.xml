@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0cc3ac0-a918-4f39-b87f-96d6b7629fdb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Root/Main/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Root/Main/functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Root/Main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Root/Main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Root/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Root/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Root/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Root/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +40,17 @@
       <updated>1639573746330</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="719" y="318" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1639587852626">
