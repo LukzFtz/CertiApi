@@ -10,13 +10,12 @@ from rest_framework.response import Response
 
 class extenso(APIView):
 
-    def get(self, request, pathRequest , format=None):
-        if(int(pathRequest)):
+    def get(self, request, pathRequest ):
+        if int(pathRequest):
 
             pathInt = int(pathRequest)
 
             if pathInt >= -99999 and pathInt <= 99999:
-
 
                 number = transformNumToStr(str(pathInt))
 
@@ -25,3 +24,9 @@ class extenso(APIView):
                 serializer.data
 
                 return Response(serializer.data)
+        elif int(pathRequest) == 0:
+            pathObject = Number(extenso="zero")
+            serializer = ExtensoSerializer(pathObject)
+            serializer.data
+
+            return Response(serializer.data)

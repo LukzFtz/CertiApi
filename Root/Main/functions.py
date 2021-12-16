@@ -1,5 +1,7 @@
 def unidade(number):
-    if number == '1':
+    if number == '0':
+        return 'zero'
+    elif number == '1':
         return 'um'
     elif number == '2':
         return 'dois'
@@ -197,7 +199,7 @@ def centena(numbers):
 
     elif numbers[0] == '5':
         centenaAtual = 'quinhetos'
-        if numbers == '400':
+        if numbers == '500':
             return centenaAtual
 
         aux = numbers[1:]
@@ -215,7 +217,7 @@ def centena(numbers):
 
     elif numbers[0] == '6':
         centenaAtual = 'seiscentos'
-        if numbers == '400':
+        if numbers == '600':
             return centenaAtual
 
         aux = numbers[1:]
@@ -233,7 +235,7 @@ def centena(numbers):
 
     elif numbers[0] == '7':
         centenaAtual = 'setecentos'
-        if numbers == '400':
+        if numbers == '700':
             return centenaAtual
 
         aux = numbers[1:]
@@ -251,7 +253,7 @@ def centena(numbers):
 
     elif numbers[0] == '8':
         centenaAtual = 'oitocentos'
-        if numbers == '400':
+        if numbers == '800':
             return centenaAtual
 
         aux = numbers[1:]
@@ -269,7 +271,7 @@ def centena(numbers):
 
     elif numbers[0] == '9':
         centenaAtual = 'novecentos'
-        if numbers == '400':
+        if numbers == '900':
             return centenaAtual
 
         aux = numbers[1:]
@@ -345,18 +347,19 @@ def milhar(numbers):
 
 
 def transformNumToStr(numbers):
-    tamanhoNumero = len(numbers)
     numeroExtenso = ""
 
     moduloNumero = numbers
 
     if moduloNumero[0] == '-':
-        numeroExtenso = "menos "
+        numeroExtenso += "menos "
         moduloNumero=numbers[1:]
+
+    tamanhoNumero = len(moduloNumero)
 
     if tamanhoNumero == 1:
         numeroExtenso += unidade(moduloNumero)
-    elif tamanhoNumero == 2 and moduloNumero[0]=='1':
+    elif tamanhoNumero == 2 and moduloNumero[0] == '1':
         numeroExtenso += dezena(moduloNumero)
     elif tamanhoNumero == 2:
         numeroExtenso += dezenaGeral(moduloNumero)
