@@ -21,6 +21,6 @@ Passo 4: Utilize os seguintes comandos para rodar o servidor:
 ```Unix Assembly
 docker-compose up
 ```
-#### E pronto o servidor já está rodando na porta 3000
+#### E pronto o servidor já estará rodando na porta 3000
 
  
