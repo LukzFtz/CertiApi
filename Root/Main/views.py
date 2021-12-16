@@ -4,24 +4,24 @@ from .serializers import ExtensoSerializer
 from rest_framework.renderers import JSONRenderer
 from .models import Number
 from .functions import transformNumToStr
-
-@require_http_methods(["GET"])
-def extenso(request, pathRequest):
-
-    if(int(pathRequest)):
-
-        pathInt = int(pathRequest)
-
-        if pathInt >= -99999 and pathInt <= 99999:
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 
-            number = transformNumToStr(str(pathInt))
+class extenso(APIView):
 
-            pathObject = Number(extenso= str(number))
-            serializer = ExtensoSerializer(pathObject)
-            serializer.data
+    def get(self, request, pathRequest , format=None):
+        if(int(pathRequest)):
 
-            json = JSONRenderer().render(serializer.data)
-            json
+            pathInt = int(pathRequest)
 
-            return HttpResponse( json )
+            if pathInt >= -99999 and pathInt <= 99999:
+
+
+                number = transformNumToStr(str(pathInt))
+
+                pathObject = Number(extenso= str(number))
+                serializer = ExtensoSerializer(pathObject)
+                serializer.data
+
+                return Response(serializer.data)

@@ -20,5 +20,5 @@ from .Main.views import extenso
 
 urlpatterns = [
     # path('/<int:pathRequest>', admin.site.urls),
-    path('<str:pathRequest>', extenso),
+    path('<str:pathRequest>', extenso.as_view()),
 ]

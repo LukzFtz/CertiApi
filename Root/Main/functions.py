@@ -129,7 +129,7 @@ def centena(numbers):
 
         aux = numbers[1:]
         auxInt = int(aux)
-        auxTxtValor = " "
+        auxTxtValor = ""
         if auxInt < 10:
             auxTxtValor += unidade(str(auxInt))
         elif auxInt < 20:
@@ -148,7 +148,7 @@ def centena(numbers):
 
         aux = numbers[1:]
         auxInt = int(aux)
-        auxTxtValor = " "
+        auxTxtValor = ""
         if auxInt < 10:
             auxTxtValor += unidade(str(auxInt))
         elif auxInt < 20:
@@ -166,7 +166,7 @@ def centena(numbers):
 
         aux = numbers[1:]
         auxInt = int(aux)
-        auxTxtValor = " "
+        auxTxtValor = ""
         if auxInt < 10:
             auxTxtValor += unidade(str(auxInt))
         elif auxInt < 20:
@@ -184,7 +184,7 @@ def centena(numbers):
 
         aux = numbers[1:]
         auxInt = int(aux)
-        auxTxtValor = " "
+        auxTxtValor = ""
         if auxInt < 10:
             auxTxtValor += unidade(str(auxInt))
         elif auxInt < 20:
@@ -202,7 +202,7 @@ def centena(numbers):
 
         aux = numbers[1:]
         auxInt = int(aux)
-        auxTxtValor = " "
+        auxTxtValor = ""
         if auxInt < 10:
             auxTxtValor += unidade(str(auxInt))
         elif auxInt < 20:
@@ -220,7 +220,7 @@ def centena(numbers):
 
         aux = numbers[1:]
         auxInt = int(aux)
-        auxTxtValor = " "
+        auxTxtValor = ""
         if auxInt < 10:
             auxTxtValor += unidade(str(auxInt))
         elif auxInt < 20:
@@ -238,7 +238,7 @@ def centena(numbers):
 
         aux = numbers[1:]
         auxInt = int(aux)
-        auxTxtValor = " "
+        auxTxtValor = ""
         if auxInt < 10:
             auxTxtValor += unidade(str(auxInt))
         elif auxInt < 20:
@@ -256,7 +256,7 @@ def centena(numbers):
 
         aux = numbers[1:]
         auxInt = int(aux)
-        auxTxtValor = " "
+        auxTxtValor = ""
         if auxInt < 10:
             auxTxtValor += unidade(str(auxInt))
         elif auxInt < 20:
@@ -274,7 +274,7 @@ def centena(numbers):
 
         aux = numbers[1:]
         auxInt = int(aux)
-        auxTxtValor = " "
+        auxTxtValor = ""
         if auxInt < 10:
             auxTxtValor += unidade(str(auxInt))
         elif auxInt < 20:
@@ -288,7 +288,7 @@ def centena(numbers):
 def milhar(numbers):
     aux = numbers[:-3]
     unidadeAtual = 'mil'
-    valorExtenso = " "
+    valorExtenso = ""
 
     if len(aux) < 2:
         valorCentenas = str(int(numbers[1:]))
@@ -308,10 +308,14 @@ def milhar(numbers):
                 valorExtenso += " e " + centena(valorCentenas)
         else:
             valorExtenso += unidade(aux) + ' ' + unidadeAtual
+
+            if valorCentenas == '0':
+                return valorExtenso
+
             if valorCentenasLength == 1:
                 valorExtenso += " e " + unidade(valorCentenas)
             elif valorCentenasLength == 2 and valorCentenas[0] == '1':
-                valorExtenso += " e "+ dezena(valorCentenas)
+                valorExtenso += " e " + dezena(valorCentenas)
             elif valorCentenasLength == 2 and valorCentenas[0] != '1':
                 valorExtenso += " e " + dezenaGeral(valorCentenas)
             else:
@@ -324,6 +328,9 @@ def milhar(numbers):
             valorExtenso += dezena(aux) + ' ' + unidadeAtual
         else:
             valorExtenso += dezenaGeral(aux) + ' ' + unidadeAtual
+
+        if valorCentenas == '0':
+            return valorExtenso
 
         if valorCentenasLength == 1:
             valorExtenso += " e " + unidade(valorCentenas)
